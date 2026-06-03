@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSETEC SRL | Cableado Estructurado – Certificación TIA-568-D</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fondo azul marino oscuro para toda la página, incluido el contenedor */
+    body {
+      background: #0a192f;  /* Navy oscuro */
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 32px 24px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #0a192f;  /* Mismo azul marino oscuro para que no haya contraste */
+      border-radius: 36px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+      padding: 20px 24px 28px 24px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      color: #f0f4fa;
+      text-align: center;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .subhead {
+      text-align: center;
+      color: #90cdf4;
+      font-size: 0.9rem;
+      border-bottom: 2px solid #2c5282;
+      display: inline-block;
+      margin: 5px auto 20px auto;
+    }
+
+    /* Leyenda adaptada a fondo oscuro */
+    .legend-table {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+      background: #102a44;
+      border-radius: 28px;
+      padding: 12px 20px;
+      border: 1px solid #2c5282;
+    }
+    .legend-table table {
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      background: #1e3a5f;
+      border-radius: 20px;
+      overflow: hidden;
+      color: #e2e8f0;
+    }
+    .legend-table th {
+      background-color: #0b2b4f;
+      color: #fbd38d;
+      padding: 8px 16px;
+    }
+    .legend-table td {
+      padding: 6px 14px;
+      border-bottom: 1px solid #2c5282;
+    }
+    .color-box {
+      width: 28px;
+      height: 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .leg-text {
+      color: #f0f4fa;
+    }
+
+    /* Contenedor del SVG: fondo ligeramente más claro para que resalte */
+    .diagram-wrapper {
+      overflow-x: auto;
+      background: #0f2a3f;
+      border-radius: 28px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      padding: 12px 8px;
+    }
+
+    /* El SVG mantiene fondo blanco para máxima claridad del diagrama */
+    svg {
+      display: block;
+      margin: 0 auto;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Tarjeta de información interactiva - fondo oscuro con borde azul */
+    .info-card {
+      margin-top: 28px;
+      background: #0f2a3f;
+      border-radius: 24px;
+      padding: 18px 26px;
+      border-left: 6px solid #63b3ed;
+      color: #e2e8f0;
+    }
+    .info-card h3 {
+      color: #90cdf4;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .info-card p {
+      color: #cbd5e0;
+      font-size: 0.88rem;
+      line-height: 1.48;
+    }
+
+    /* Pie de página con normas */
+    .norm-footer {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #a0aec0;
+      margin-top: 24px;
+      border-top: 1px solid #2c5282;
+      padding-top: 18px;
+    }
+
+    .clickable {
+      cursor: pointer;
+      transition: filter 0.15s ease;
+    }
+    .clickable:hover {
+      filter: brightness(0.95);
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>📡 Cableado Estructurado – INSETEC SRL</h1>
+  <div style="text-align: center;"><div class="subhead">Topología Estrella Jerárquica | ANSI/TIA-568-D / ISO/IEC 11801:2017</div></div>
+
+  <!-- LEYENDA -->
+  <div class="legend-table">
+    <table>
+      <thead><tr><th>Referencia</th><th>Tipo de cable / solución</th></tr></thead>
+      <tbody>
+        <tr><td><span class="color-box" style="background:#3182CE;"></span> Oficinas</td><td>Cat6A F/UTP – 30 puestos (≤60 m) – TIA-568-D</td></tr>
+        <tr><td><span class="color-box" style="background:#F59E0B;"></span> Taller CNC</td><td>Cat6A S/FTP doble blindaje + conduit EMT (≤45 m) – IEC 61000-4-3 / TIA-568-D</td></tr>
+        <tr><td><span class="color-box" style="background:#E65540;"></span> Backbone FO</td><td>Fibra OS2 ADSS (180 m) – TIA-568-C.3</td></tr>
+        <tr><td><span class="color-box" style="background:#2F855A;"></span> Cámaras 80/95 m</td><td>CAT6 UTP exterior + PoE+ (IEEE 802.3at) – TIA-568-D</td></tr>
+        <tr><td><span class="color-box" style="background:#ED64A6;"></span> Cámara 110 m</td><td>Dos tramos CAT6 UTP (55+55 m) + Extensor PoE activo IEEE 802.3bt – TIA-568-D</td></tr>
+        <tr><td><span class="color-box" style="background:#48BB78;"></span> Cámara 130 m</td><td>Fibra OS2 + convertidor + fuente local 12V – TIA-568-C.3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="diagram-wrapper">
+    <svg viewBox="0 0 1320 1080" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; background:#FFFFFF; border-radius:28px;">
+      <defs>
+        <marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#E65540" stroke-width="2"/></marker>
+        <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#3182CE" stroke-width="2"/></marker>
+        <marker id="arr-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#F59E0B" stroke-width="2"/></marker>
+        <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2F855A" stroke-width="2"/></marker>
+        <marker id="arr-lightgreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#48BB78" stroke-width="2"/></marker>
+        <marker id="arr-pink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#ED64A6" stroke-width="2"/></marker>
+        <filter id="shadowSoft"><feDropShadow dx="1.5" dy="2.5" stdDeviation="2.5" flood-color="#00000020"/></filter>
+      </defs>
+
+      <!-- EDIFICIO A -->
+      <rect x="25" y="25" width="640" height="1000" rx="32" fill="#F4F9FF" stroke="#2B6CB0" stroke-width="2.5" stroke-dasharray="12,6"/>
+      <text x="345" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#1A365D">🏢 EDIFICIO A – Sede Principal INSETEC</text>
+
+      <!-- ER Equipment Room -->
+      <rect x="50" y="90" width="590" height="160" rx="18" fill="#1F3864" filter="url(#shadowSoft)" class="clickable" onclick="showDetail('ER – Equipment Room (Edificio A)','Switch Core 48p + 4 SFP (IEEE 802.3), ODF 12p LC OS2, Patch Panels Cat6A 24p (3 uds), UPS 3kVA. Cumple TIA-569-D (dim. mín. 14m², temp. 18-27°C). Centro de gestión principal.')"/>
+      <text x="345" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FBD38D">ER – Equipment Room (Cuarto de Equipos)</text>
+      <text x="345" y="142" text-anchor="middle" font-size="12" fill="#BEE3F8">Rack 24U cerrado | ANSI/TIA-569-D | Nodo central</text>
+      <rect x="70" y="158" width="125" height="75" rx="10" fill="#2B6CB0"/><text x="132" y="184" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Switch Core</text><text x="132" y="200" text-anchor="middle" font-size="9" fill="#BEE3F8">48p + 4 SFP</text><text x="132" y="215" text-anchor="middle" font-size="9" fill="#BEE3F8">IEEE 802.3</text>
+      <rect x="215" y="158" width="125" height="75" rx="10" fill="#2C5282"/><text x="277" y="184" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">ODF 12p LC</text><text x="277" y="200" text-anchor="middle" font-size="9" fill="#BEE3F8">Fibra OS2</text><text x="277" y="215" text-anchor="middle" font-size="9" fill="#BEE3F8">TIA-568-C.3</text>
+      <rect x="360" y="158" width="125" height="75" rx="10" fill="#2B6CB0"/><text x="422" y="184" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Patch Panel</text><text x="422" y="200" text-anchor="middle" font-size="9" fill="#BEE3F8">Cat6A 24p ×3</text><text x="422" y="215" text-anchor="middle" font-size="9" fill="#BEE3F8">TIA-568-D</text>
+      <rect x="505" y="158" width="110" height="75" rx="10" fill="#1A365D"/><text x="560" y="184" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">UPS</text><text x="560" y="200" text-anchor="middle" font-size="9" fill="#BEE3F8">3 kVA</text><text x="560" y="215" text-anchor="middle" font-size="9" fill="#BEE3F8">Respaldo</text>
+
+      <!-- TR Telecomunicaciones A -->
+      <rect x="50" y="280" width="590" height="135" rx="18" fill="#2B6CB0" filter="url(#shadowSoft)" class="clickable" onclick="showDetail('TR – Cuarto de Telecomunicaciones A','Switch distribución Gigabit 48p, Switch PoE+ 8p (IEEE 802.3at, 30W). Patch Panels Cat6A: 30p oficinas (F/UTP) y 5p taller (S/FTP). Cableado horizontal ≤90m según TIA-568-D.')"/>
+      <text x="345" y="310" text-anchor="middle" font-size="16" font-weight="bold" fill="#FEFCBF">TR – Cuarto de Telecomunicaciones A</text>
+      <text x="345" y="330" text-anchor="middle" font-size="11" fill="#BEE3F8">Rack 12U | Switch Distribución 48p + Switch PoE+ 8p | Distribución horizontal</text>
+      <rect x="70" y="345" width="150" height="55" rx="10" fill="#1A365D"/><text x="145" y="367" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Switch Dist.</text><text x="145" y="383" text-anchor="middle" font-size="9" fill="#BEE3F8">48p Gigabit + SFP</text>
+      <rect x="240" y="345" width="150" height="55" rx="10" fill="#553C9A"/><text x="315" y="367" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Switch PoE+</text><text x="315" y="383" text-anchor="middle" font-size="9" fill="#E9D8FD">8p | 30W/p | 802.3at</text>
+      <rect x="410" y="345" width="210" height="55" rx="10" fill="#2C5282"/><text x="515" y="367" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Patch Panels Cat6A</text><text x="515" y="383" text-anchor="middle" font-size="9" fill="#BEE3F8">30p oficinas (F/UTP) + 5p taller (S/FTP)</text>
+
+      <!-- Zona Oficinas -->
+      <rect x="45" y="450" width="310" height="230" rx="18" fill="#EBF8FF" stroke="#3182CE" stroke-width="2.5"/>
+      <text x="200" y="480" text-anchor="middle" font-size="15" font-weight="800" fill="#1A365D">Área Oficinas Administrativas</text>
+      <text x="200" y="502" text-anchor="middle" font-size="12" fill="#2B6CB0">30 puestos | Cat6A F/UTP | ≤ 60 m</text>
+      <text x="200" y="520" text-anchor="middle" font-size="11" fill="#4A5568">Alta inmunidad EMI (A/C + luminarias LED)</text>
+      
+      <rect x="65" y="540" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Cable Cat6A F/UTP, faceplate doble, keystone Cat6A. Esquema T568B. Canaleta PVC 100×60mm (TIA-569-D). Atenuación <25dB. Norma TIA-568-D.')"/><text x="97" y="563" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-01</text>
+      <rect x="140" y="540" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Misma especificación: Cat6A F/UTP, faceplate doble, keystone Cat6A. Esquema T568B. Cumple TIA-568-D.')"/><text x="172" y="563" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-02</text>
+      <rect x="215" y="540" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Cable horizontal Cat6A F/UTP, conector RJ45 Cat6A UTP. Distancia máxima 60m. Norma TIA-568-D.')"/><text x="247" y="563" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-03</text>
+      <rect x="290" y="540" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Patch panel Cat6A → toma de telecomunicaciones. Esquema T568B. Atenuación garantizada <25dB. TIA-568-D.')"/><text x="322" y="563" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-04</text>
+      <rect x="65" y="590" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Cat6A F/UTP LSZH, canaleta PVC 100×60mm. Alta inmunidad a interferencias. TIA-568-D.')"/><text x="97" y="613" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-05</text>
+      <rect x="140" y="590" width="65" height="36" rx="8" fill="#3182CE" class="clickable" onclick="showDetail('PC Oficina','Cumple TIA-568-D Clase EA. Longitud ≤60m, atenuación <25dB @500MHz.')"/><text x="172" y="613" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">PC-06</text>
+      <text x="200" y="650" text-anchor="middle" font-size="11" fill="#718096">... (30 puestos totales)</text>
+      <rect x="75" y="660" width="250" height="24" rx="8" fill="#E2E8F0" stroke="#A0AEC0" stroke-width="1"/><text x="200" y="677" text-anchor="middle" font-size="10" fill="#2D3748">📐 Canaleta PVC 100×60mm (TIA-569-D)</text>
+
+      <!-- Zona Taller CNC -->
+      <rect x="375" y="450" width="280" height="230" rx="18" fill="#FFFFF0" stroke="#F59E0B" stroke-width="2.5"/>
+      <text x="515" y="480" text-anchor="middle" font-size="15" font-weight="800" fill="#7B341E">Taller de Producción CNC</text>
+      <text x="515" y="502" text-anchor="middle" font-size="12" fill="#9C4221">5 máquinas | Cat6A S/FTP | ≤45 m</text>
+      <text x="515" y="520" text-anchor="middle" font-size="11" fill="#4A5568">Alta EMI | Conduit EMT metálico a tierra</text>
+      <rect x="400" y="545" width="70" height="45" rx="10" fill="#F59E0B" class="clickable" onclick="showDetail('CNC-1','Cat6A S/FTP doble blindaje, conector RJ45 STP IP67, conduit EMT 1\'\', separación 30cm de cables fuerza. Puesta a tierra (IEC 61000-4-3). Distancia: 45m. Norma TIA-568-D.')"/><text x="435" y="571" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">CNC-1</text><text x="435" y="585" text-anchor="middle" font-size="8" fill="#FEFCBF">45 m</text>
+      <rect x="485" y="545" width="70" height="45" rx="10" fill="#F59E0B" class="clickable" onclick="showDetail('CNC-2','Cat6A S/FTP, canalización EMT metálica, conectores blindados IP67. Distancia 45m. Aterrizaje del blindaje en patch panel. TIA-568-D.')"/><text x="520" y="571" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">CNC-2</text><text x="520" y="585" text-anchor="middle" font-size="8" fill="#FEFCBF">45 m</text>
+      <rect x="570" y="545" width="70" height="45" rx="10" fill="#F59E0B" class="clickable" onclick="showDetail('CNC-3','Cable Cat6A S/FTP, tubería EMT 1\'\', separación EMI mínima 30cm. Distancia 40m. Norma IEC 61000-4-3, TIA-568-D.')"/><text x="605" y="571" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">CNC-3</text><text x="605" y="585" text-anchor="middle" font-size="8" fill="#FEFCBF">40 m</text>
+      <rect x="400" y="605" width="70" height="45" rx="10" fill="#F59E0B" class="clickable" onclick="showDetail('CNC-4','Cat6A S/FTP, conectores RJ45 blindados STP. Distancia 35m. Conduit EMT conectado a barra de tierra. TIA-568-D.')"/><text x="435" y="631" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">CNC-4</text><text x="435" y="645" text-anchor="middle" font-size="8" fill="#FEFCBF">35 m</text>
+      <rect x="485" y="605" width="70" height="45" rx="10" fill="#F59E0B" class="clickable" onclick="showDetail('CNC-5','Cat6A S/FTP, conduit EMT, conectores IP67. Distancia 30m. Atenuación <20dB. Cumple TIA-568-D para entornos industriales.')"/><text x="520" y="631" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">CNC-5</text><text x="520" y="645" text-anchor="middle" font-size="8" fill="#FEFCBF">30 m</text>
+      <rect x="400" y="658" width="230" height="24" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/><text x="515" y="675" text-anchor="middle" font-size="10" fill="#7B341E">🔩 Conduit EMT 1" + Barra tierra (TIA-569-D)</text>
+
+      <!-- Cámaras Exteriores -->
+      <rect x="45" y="720" width="610" height="270" rx="20" fill="#F0FFF4" stroke="#2F855A" stroke-width="2.5"/>
+      <text x="350" y="750" text-anchor="middle" font-size="16" font-weight="800" fill="#22543D">Zona de Videovigilancia Exterior (4 cámaras IP)</text>
+      <text x="350" y="772" text-anchor="middle" font-size="12" fill="#276749">Soluciones diferenciadas según Tabla 3 (TIA-568-D / IEEE 802.3)</text>
+
+      <rect x="70" y="800" width="130" height="95" rx="12" fill="#2F855A" class="clickable" onclick="showDetail('Cámara IP-01 – 80 m','Cable CAT6 UTP exterior cubierta PE UV. Alimentación PoE+ (IEEE 802.3at) directa desde switch PoE+. Tubería PVC rígido 1\'\' enterrada 40 cm. Atenuación <22dB. Norma TIA-568-D.')"/>
+      <text x="135" y="831" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">CAM-01</text>
+      <text x="135" y="850" text-anchor="middle" font-size="10" fill="#C6F6D5">CAT6 UTP + PoE+</text>
+      <text x="135" y="866" text-anchor="middle" font-size="10" fill="#C6F6D5">80 m</text>
+
+      <rect x="220" y="800" width="130" height="95" rx="12" fill="#2F855A" class="clickable" onclick="showDetail('Cámara IP-02 – 95 m','CAT6 UTP exterior + PoE+. Verificar caída de tensión <5% (IEEE 802.3at). Longitud dentro del límite normativo (95m). Atenuación <26dB. TIA-568-D.')"/>
+      <text x="285" y="831" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">CAM-02</text>
+      <text x="285" y="850" text-anchor="middle" font-size="10" fill="#C6F6D5">CAT6 UTP + PoE+</text>
+      <text x="285" y="866" text-anchor="middle" font-size="10" fill="#C6F6D5">95 m</text>
+
+      <rect x="370" y="800" width="130" height="95" rx="12" fill="#ED64A6" class="clickable" onclick="showDetail('Cámara IP-03 – 110 m','Dos tramos de CAT6 UTP exterior de 55 m cada uno, con extensor PoE activo IEEE 802.3bt (60W) en caja IP65 a 55 m del switch. Cada tramo ≤ 55 m (dentro del límite de 100 m de TIA-568-D). El extensor regenera la señal y retransmite PoE++. Atenuación por tramo ≤ 15.1 dB.')"/>
+      <text x="435" y="831" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">CAM-03</text>
+      <text x="435" y="850" text-anchor="middle" font-size="10" fill="#FDE68A">CAT6 UTP + Extensor PoE</text>
+      <text x="435" y="866" text-anchor="middle" font-size="10" fill="#FDE68A">55 m + 55 m</text>
+
+      <rect x="520" y="800" width="130" height="95" rx="12" fill="#48BB78" class="clickable" onclick="showDetail('Cámara IP-04 – 130 m','Fibra óptica OS2 armada + convertidor de medios FO a RJ45 (sin PoE). Fuente de alimentación local 12V DC en caja IP66. Pararrayos SPD IEC 62305. Atenuación ≤0.65 dB @ 1310 nm. Norma TIA-568-C.3.')"/>
+      <text x="585" y="831" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">CAM-04</text>
+      <text x="585" y="850" text-anchor="middle" font-size="10" fill="#C6F6D5">Fibra OS2 + Convert. + Fuente</text>
+      <text x="585" y="866" text-anchor="middle" font-size="10" fill="#C6F6D5">130 m</text>
+
+      <!-- BACKBONE AÉREO -->
+      <path d="M 670 180 L 750 180" stroke="#E65540" stroke-width="4" stroke-dasharray="12,6" marker-end="url(#arr-orange)"/>
+      <line x1="670" y1="45" x2="670" y2="980" stroke="#E65540" stroke-width="3" stroke-dasharray="14,8" opacity="0.65"/>
+
+      <!-- EDIFICIO B -->
+      <rect x="750" y="25" width="540" height="660" rx="30" fill="#FFFAF0" stroke="#E65540" stroke-width="2.5" stroke-dasharray="12,6"/>
+      <text x="1020" y="60" text-anchor="middle" font-size="20" font-weight="800" fill="#7B341E">🏢 EDIFICIO B</text>
+      <text x="1020" y="82" text-anchor="middle" font-size="13" fill="#9C4221">Edificio secundario – Enlace fibra óptica 180 m</text>
+
+      <!-- TR Edificio B -->
+      <rect x="780" y="110" width="480" height="135" rx="18" fill="#DD6B20" filter="url(#shadowSoft)" class="clickable" onclick="showDetail('TR – Edificio B','Backbone OS2 terminado en ODF 12p LC. Switch distribución Gigabit con uplink SFP. Cableado horizontal Cat6A a puestos. Normas TIA-568-D (cobre) y TIA-568-C.3 (fibra).')"/>
+      <text x="1020" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#FEFCBF">TR – Cuarto de Telecomunicaciones B</text>
+      <text x="1020" y="160" text-anchor="middle" font-size="11" fill="#FEEBC8">ODF 12p LC | Switch Distribución Gigabit SFP | Patch panels Cat6A</text>
+      <rect x="800" y="180" width="190" height="50" rx="10" fill="#9C4221" class="clickable" onclick="showDetail('ODF 12p LC','Optical Distribution Frame para fibra OS2. Terminación del backbone de 180m. Conectores LC dúplex. Atenuación total ≤ 1.57 dB @ 1310 nm (cable 0.4 dB/km + conectores 0.1 dB c/u).')"/><text x="895" y="202" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">ODF 12p LC</text><text x="895" y="218" text-anchor="middle" font-size="9" fill="#FEEBC8">Fibra OS2 | TIA-568-C.3</text>
+      <rect x="1020" y="180" width="220" height="50" rx="10" fill="#C05621" class="clickable" onclick="showDetail('Switch Distribución B','Switch Gigabit con puerto SFP para uplink de fibra OS2. Puertos RJ45 para cableado horizontal Cat6A. Cumple IEEE 802.3 y TIA-568-D.')"/><text x="1130" y="202" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">Switch Distribución B</text><text x="1130" y="218" text-anchor="middle" font-size="9" fill="#FEEBC8">48p + uplink SFP OS2</text>
+
+      <!-- Puestos Edificio B -->
+      <rect x="780" y="280" width="480" height="280" rx="18" fill="#FFFFF0" stroke="#F6AD55" stroke-width="2.5"/>
+      <text x="1020" y="312" text-anchor="middle" font-size="15" font-weight="800" fill="#7B341E">Puestos de Trabajo – Edificio B</text>
+      <text x="1020" y="334" text-anchor="middle" font-size="12" fill="#9C4221">Cable Cat6A F/UTP | ≤ 90 m | TIA-568-D</text>
+
+      <rect x="800" y="360" width="95" height="40" rx="8" fill="#F6AD55" class="clickable" onclick="showDetail('TO-B-01','Toma de telecomunicaciones Cat6A F/UTP. Faceplate doble, keystone Cat6A. Esquema T568B. Conexión a switch distribución B. TIA-568-D.')"/><text x="847" y="380" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">TO-B-01</text>
+      <rect x="915" y="360" width="95" height="40" rx="8" fill="#F6AD55" class="clickable" onclick="showDetail('TO-B-02','Idem TO-B-01: Cat6A F/UTP, canaleta PVC, longitud ≤90m. Norma TIA-568-D.')"/><text x="962" y="380" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">TO-B-02</text>
+      <rect x="1030" y="360" width="95" height="40" rx="8" fill="#F6AD55" class="clickable" onclick="showDetail('TO-B-03','Puesto de trabajo Edificio B. Cable horizontal Cat6A F/UTP. Patch panel correspondiente en TR-B. TIA-568-D.')"/><text x="1077" y="380" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">TO-B-03</text>
+      <rect x="1145" y="360" width="95" height="40" rx="8" fill="#F6AD55" class="clickable" onclick="showDetail('TO-B-04','Toma de telecomunicaciones. Esquema T568B. Atenuación según norma TIA-568-D para Cat6A.')"/><text x="1192" y="380" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">TO-B-04</text>
+      <text x="1020" y="435" text-anchor="middle" font-size="12" fill="#718096">... (cantidad según proyecto)</text>
+      <rect x="870" y="460" width="300" height="28" rx="10" fill="#FEF3C7" stroke="#F6AD55" stroke-width="1"/><text x="1020" y="480" text-anchor="middle" font-size="11" fill="#7B341E">Canaleta PVC / bandeja metálica (TIA-569-D)</text>
+
+      <!-- Etiquetado TIA-606-B -->
+      <rect x="800" y="530" width="440" height="80" rx="16" fill="#FAF5FF" stroke="#9F7AEA" stroke-width="1.8" class="clickable" onclick="showDetail('Etiquetado ANSI/TIA-606-B','Códigos: H-OF-01..30 (oficinas), H-CNC-01..05 (taller), BB-AB-F1 (backbone), CAM-01..04 (cámaras). Impresión con Brady BMP61. Reduce resolución de incidencias 60-70% según TIA-606-B.')"/>
+      <text x="1020" y="560" text-anchor="middle" font-size="14" font-weight="bold" fill="#6B46C1">🏷 Etiquetado ANSI/TIA-606-B</text>
+      <text x="1020" y="578" text-anchor="middle" font-size="11" fill="#805AD5">H-OF-01..30 | H-CNC-01..05 | BB-AB-F1 | CAM-01..04</text>
+      <text x="1020" y="596" text-anchor="middle" font-size="10" fill="#A0AEC0">Identificador único en ambos extremos | Gestión estandarizada</text>
+
+      <!-- Rutas de cableado -->
+      <path d="M 345 415 L 345 450" stroke="#3182CE" stroke-width="3.5" fill="none" marker-end="url(#arr-blue)"/>
+      <path d="M 500 415 L 500 450" stroke="#F59E0B" stroke-width="3.5" fill="none" marker-end="url(#arr-gold)"/>
+      <path d="M 315 400 L 315 740 L 135 740 L 135 800" stroke="#2F855A" stroke-width="2.8" fill="none" stroke-dasharray="8,5" marker-end="url(#arr-green)"/>
+      <path d="M 315 400 L 315 760 L 285 760 L 285 800" stroke="#2F855A" stroke-width="2.8" fill="none" stroke-dasharray="8,5" marker-end="url(#arr-green)"/>
+      <path d="M 315 400 L 315 700 L 435 700 L 435 800" stroke="#ED64A6" stroke-width="2.8" fill="none" stroke-dasharray="8,5" marker-end="url(#arr-pink)"/>
+      <path d="M 277 233 L 277 320 L 585 320 L 585 800" stroke="#48BB78" stroke-width="2.8" fill="none" stroke-dasharray="8,5" marker-end="url(#arr-lightgreen)"/>
+      <path d="M 1020 245 L 1020 280" stroke="#DD6B20" stroke-width="3" fill="none" marker-end="url(#arr-orange)"/>
+      <path d="M 120 1020 L 120 245" stroke="#A0AEC0" stroke-width="2.2" fill="none" stroke-dasharray="7,4" marker-end="url(#arr-blue)"/>
+
+      <!-- WAN Conexión -->
+      <rect x="55" y="1020" width="130" height="38" rx="18" fill="#2D3748" class="clickable" onclick="showDetail('WAN / Internet','Proveedor ISP. Enlace al Switch Core del ER mediante fibra o cobre categoría 6A. Gateway principal.')"/>
+      <text x="120" y="1045" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">WAN/Internet</text>
+    </svg>
+  </div>
+
+  <div class="info-card" id="infoCard">
+    <h3 id="infoTitle">Información técnica (haz clic en cualquier elemento)</h3>
+    <p id="infoText">Haz clic en cualquier elemento del diagrama (rack, cámara, CNC, panel, etc.) para ver los detalles de norma, cable, distancia y justificación según el documento del proyecto INSETEC SRL (Tablas 3-10, normas TIA-568-D, TIA-568-C.3, TIA-569-D, TIA-606-B, IEEE 802.3, IEC 61000-4-3, IEC 62305, etc.).</p>
+  </div>
+  <div class="norm-footer">
+    Normas aplicadas (versiones según documento final): ANSI/TIA-568-D (cobre) | ANSI/TIA-568-C.3 (fibra) | ANSI/TIA-569-D (canalizaciones) | ANSI/TIA-606-B (etiquetado) | ISO/IEC 11801:2017 | IEEE 802.3 / 802.3at / 802.3bt | IEC 60529 | IEC 61000-4-3 | IEC 62305 | NFPA 70 (NEC 358) para conduit EMT.
+  </div>
+</div>
+
+<script>
+  function showDetail(title, detail) {
+    document.getElementById('infoTitle').innerHTML = title;
+    document.getElementById('infoText').innerHTML = detail;
+  }
+</script>
+</body>
+</html>
